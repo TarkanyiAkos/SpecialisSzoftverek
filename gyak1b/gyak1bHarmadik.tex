@@ -1,0 +1,59 @@
+\documentclass[a4paper,12pt,twoside,twocolumn]{book}
+% preambulum (preamble):
+% csomagok betöltése,
+% stílus, saját makrók
+\usepackage[magyar]{babel}
+\usepackage{t1enc}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{hulipsum}
+\usepackage{blindtext}
+\usepackage{geometry}
+\geometry{inner=3cm,outer=5cm,top=3cm,bottom=3cm}
+\geometry{bindingoffset=1cm}
+\geometry{marginparwidth=3cm,marginparsep=0.5cm}
+\begin{document}
+%a
+\title{Dokumentum Cím}
+\author{Szerző}
+\date{\today}
+\maketitle
+\hulipsum[2]
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\footnote{lábjegyzet}
+\setcounter{tocdepth}{3}
+\pagenumbering{roman} 
+\tableofcontents
+\newpage
+\pagenumbering{arabic} 
+\section[Szek.]{Szekció\footnote{lábjegyzet a címsorba}}
+\hulipsum[2-3]
+\subsection{Alszekció}
+\hulipsum[10]
+\marginpar{Ez egy széljegyzet.}
+\subsection{Alszekció}
+\hulipsum[10]
+\marginpar{Ez meg egy másik széljegyzet.}
+\section{Szekció}
+\hulipsum[2-3]
+\subsection{Alszekció}
+\hulipsum[1]
+\subsubsection{0.2.1.1 Alalszekció}
+\hulipsum[1]
+\paragraph{0.2.1.1.1 Paragrafus}
+\hulipsum[1]
+\subparagraph{0.2.1.1.1.1 Alparagrafus}
+szia
+\appendix
+\section{Függelék Szekció}
+\hulipsum[1]
+\subsection{Függelék alszekció}
+\hulipsum[1]
+\section{Függelék Szekció}
+\hulipsum[1]
+\marginpar{Ez is egy széljegyzet.}
+\subsection{Függelék alszekció}
+\hulipsum[1]
+
+\end{document}

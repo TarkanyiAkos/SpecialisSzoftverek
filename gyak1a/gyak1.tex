@@ -1,0 +1,39 @@
+\documentclass[11pt]{article}
+% preambulum (preamble):
+% csomagok betöltése,
+% stílus, saját makrók
+\usepackage[magyar]{babel}
+\usepackage{t1enc}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\begin{document}
+%ja☺
+\texttt{\textbf{Typewriter és Vastag}}
+
+\textsc{\textit{Kiskapitális és Dőlt}}
+
+\textsl{\textsf{Slanted és Sans Serif}}
+
+\textit{\emph{Italic}}
+
+\textbf{\emph{Bold}}
+
+\textsc{\emph{Small Caps}}
+
+Betűtipus \Large bemutató \normalsize mondat amihez \MakeUppercase{nem} árt sok szó.
+
+\textcolor{red}{Piros színű szöveg.}
+
+\colorbox{green}{\scalebox{-1}[1]{Vízszintesen tükrözött rész.}}
+
+\scalebox{2}[-1]{Függőlegesen tükrözött, megnyújtott rész.}
+
+\rotatebox{90}{Szöveg 90 fokkal elforgatva}
+
+\rotatebox{270}{Szöveg 270 fokkal elforgatva}
+
+\colorbox{black}{\textcolor{white}{Invertált szöveg}}
+
+\fcolorbox{red}{white}{Keretezett szöveg.}
+
+\end{document}

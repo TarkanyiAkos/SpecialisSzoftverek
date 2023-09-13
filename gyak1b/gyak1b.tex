@@ -1,0 +1,40 @@
+\documentclass[11pt]{article}
+% preambulum (preamble):
+% csomagok betöltése,
+% stílus, saját makrók
+\usepackage[latin,english,magyar]{babel}
+\usepackage{t1enc}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{hulipsum}
+\usepackage{blindtext}
+\begin{document}
+%ja☺
+\title{Dokumentum Cím}
+\author{Szerző}
+\date{\today}
+\maketitle
+\selectlanguage{english}
+\frenchspacing
+\noindent
+\today\
+"Blindtext:"
+\Blindtext[2]
+\bigskip
+\indent
+\par
+\raggedleft
+\selectlanguage{magyar}
+\today\
+"hulipsum:"
+\hulipsum[2-3]
+\par
+\raggedright
+\linespread{2}
+\selectlanguage{latin}
+\today\
+"lipsum:"
+\lipsum[2-3]
+\linespread{1}
+\end{document}
