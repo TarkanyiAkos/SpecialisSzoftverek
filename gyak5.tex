@@ -1,0 +1,135 @@
+\documentclass[aspectratio=169, 12pt]{beamer}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{lipsum}
+\usepackage{caption}
+
+\captionsetup[figure]{labelformat=empty}
+
+\usetheme{CambridgeUS}
+\usecolortheme{dove}
+\title{Cim}
+\begin{document}
+
+\begin{frame}
+  \maketitle
+\end{frame}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Tartalomjegyzék}
+    \tableofcontents[currentsection, hideothersubsections, sectionstyle=show/shaded]
+  \end{frame}
+}
+
+\section{Feladat 1}
+
+\subsection{1}
+\begin{frame}
+  \frametitle{1}
+  \framesubtitle{Alcím}
+  szöveg
+\end{frame}
+
+\subsection{2}
+\begin{frame}
+  \frametitle{2}
+  \framesubtitle{Alcím}
+  szöveg
+\end{frame}
+
+\subsection{3}
+\begin{frame}[fragile]
+  \frametitle{Verbatim}
+  \framesubtitle{verbatim}
+  \begin{verbatim}
+qwertzuiopőú
+asdfghjkléáű
+íyxcvbnm,.-
+  \end{verbatim}
+\end{frame}
+
+\subsection{4}
+\begin{frame}[allowframebreaks]
+  \frametitle{Tördelés}
+  \framesubtitle{subtitle}
+  \lipsum[3-4]
+\end{frame}
+
+\subsection{5}
+\begin{frame}
+  \frametitle{Oszlopok}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item 1
+        \pause
+        \item 2
+        \pause
+        \item 3
+        \pause
+      \end{itemize}
+      \begin{enumerate}
+        \item A
+        \item B
+        \item C
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+    	\begin{figure}
+      	\only<5>{\includegraphics[width=\textwidth]{szines.jpg}}
+      	\only<6>{\includegraphics[width=\textwidth]{szepia.jpg}}
+      	\caption{felirat}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\section{2. Feladat}
+
+\begin{frame}
+  \frametitle{Block, Exampleblock, Alertblock}
+  \begin{block}{Block}
+    block tartalma
+  \end{block}
+
+  \begin{exampleblock}{Exampleblock}
+    exampleblock tartalma
+  \end{exampleblock}
+
+  \begin{alertblock}{Alertblock}
+    alertblock tartalma
+  \end{alertblock}
+
+  \begin{block}{}
+    cim nelkuli block tartalma
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Theorem, Proof}
+  \begin{theorem}
+    Tétel
+  \end{theorem}
+	
+	\visible<2->{
+  	\begin{proof}
+    	Bizonyitá
+  	\end{proof}
+  }
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Latex Kód}
+  \begin{semiverbatim}
+    \textcolor{blue}{\textbackslash documentclass}\{beamer\}
+    \textcolor{blue}{\textbackslash begin}\{document\}
+
+    \textcolor{green}{\% ...}
+
+    \textcolor{blue}{\textbackslash end}\{document\}
+  \end{semiverbatim}
+\end{frame}
+
+\end{document}
