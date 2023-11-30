@@ -1,0 +1,126 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[magyar]{babel}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{array}
+\theoremstyle{remark}
+\begin{document}
+\newtheorem{tétel}{Tétel}
+\newtheorem{Tétel2}{Tétel}[section]
+\begin{tétel}[Pitagorasz-tétel]
+    Bármely derékszögű háromszög átfogójának négyzete megegyezik a befogók négyzetösszegével. Tehát: ha egy háromszög derékszögű, akkor a leghosszabb oldalára emelt négyzet területe a másik két oldalra emelt négyzetek területének összegével egyenlő.
+\end{tétel}
+\begin{Tétel2}
+    Definiáljunk Tétel (megjelenítendő) néven tételkörnyezetet, és helyezzünk el belőle a dokumentumban 2-t! Az egyiknek adjunk nevet/szerzőt is!
+\end{Tétel2}
+\leavevmode
+\newtheorem{lemma}[tétel]{Lemma}
+\begin{lemma}\label{lemmabiz}
+    Definiáljunk Lemma néven egy tételkörnyezetet, amit a Tétellel együtt sorszámoz! Helyezzünk el a dokumentumban 1 Lemmát!
+\end{lemma}
+\theoremstyle{definition}
+\newtheorem{definíció}{Definíció}[section]
+\begin{proof}
+    A bizonyítás szövege.
+\end{proof}
+\begin{proof}[Lemma bizonyítása]
+    A bizonyítás szövege. Hivatkozás a Lemmára: \ref{lemmabiz}.
+\end{proof}    
+\section{Bevezető}
+\newtheorem{1a}{1a}
+\begin{1a}
+Az \( \frac{1}{{n^2}} \) sorösszege: 
+\( \sum_{n=1}^{\infty} \frac{1}{{n^2}} = \frac{{\pi^2}}{6} \)
+\end{1a}
+\newtheorem{1b}{1b}
+\begin{1b}
+Az \(n!\) (n faktoriális) a számok szorzata 1től \(n\)ig, azaz
+\[n! := \prod_{k=1}^{n} k = 1 \cdot 2 \cdot \ldots \cdot n.\]
+Konvenció szerint 0! = 1.
+\end{1b}
+\newtheorem{1c}{1c}
+\begin{1c}
+Legyen \(0 \leq k \leq n\). A binomiális együttható
+\[
+\binom{n}{k} := \frac{n!}{k! \cdot (n - k)!}
+\]
+ahol a faktoriális (1) szerint értelmezzük.
+\end{1c}
+\newtheorem{1d}{1d}
+\begin{1d}
+Az előjel- azaz szignum függvényt a következőképpen definiáljuk:
+\[
+\text{sgn}(x) = 
+\begin{cases} 
+1, & \text{ha } x > 0, \\
+0, & \text{ha } x = 0, \\
+-1, & \text{ha } x < 0.
+\end{cases}
+\]
+\end{1d}
+\section{Determináns}
+\begin{tétel}{2a}
+Legyen
+\([n] := \{1, 2, \ldots, n\}\) a természetes számok halmaza 1től \(n\)ig.
+\end{tétel}
+\begin{tétel}{2b}
+Egy \(n\)-edrendű permutáció \(\sigma\) egy bijekció \([n]\) -ből \([n]\) -be. Az \(n\)-edrendű permutációk halmazát, az úgynevezett szimmetrikus csoportot, \(S_n\)nel jelöljük.
+\end{tétel}
+\begin{tétel}{2c}
+Egy \(\sigma \in S_n\) permutációban inverziónak nevezünk egy \((i, j)\) párt, ha \(i < j\) de \(\sigma_i > \sigma_j\).
+\end{tétel}
+\begin{tétel}{2d}
+Egy \(\sigma \in S_n\) permutáció paritásának az inverziók számát nevezzük:
+\[I(\sigma) := \sum_{\substack{i, j \in [n] \\ i < j \\ \sigma_i > \sigma_j}} 1.\]
+\end{tétel}
+\begin{tétel}{2e}
+Legyen \(A \in \mathbb{R}^{n \times n}\), egy \(n \times n\)-es (négyzetes) valós mátrix:
+\[
+A=
+\begin{bmatrix}
+a_{11} & a_{12} & \ldots & a_{1n} \\
+a_{21} & a_{22} & \ldots & a_{2n} \\
+\vdots & \vdots & & \vdots \\
+a_{n1} & a_{n2} & \ldots & a_{nn} \\
+\end{bmatrix}
+\]
+\end{tétel}
+Az \(A\) mátrix determinánsát a következőképpen definiáljuk:
+\[
+\text{det}(A) := \sum_{\sigma \in S_n} (-1)^{I(\sigma)} \prod_{i=1}^{n} a_{i\sigma(i)}.
+\]
+\section{Logikai azonosság}
+\begin{equation}
+(a \land b \land c) \rightarrow d = a \rightarrow (b \rightarrow (c \rightarrow d)) \tag{3}
+\end{equation}
+Az alábbi azonoságokat használjuk fel bizonyítás nélkül:
+\begin{align}
+x \rightarrow y &= \overline{x} \lor y \tag{4a} \\
+x \lor y &= \overline{x} \land \overline{y} \tag{4b}
+\end{align}
+A (3) bal oldala, (4) felhasználásával:
+\begin{align}
+(a \land b \land c) \rightarrow d &= \overline{a} \lor \overline{b} \lor \overline{c} \lor d \tag{5}
+\end{align}
+A (3) jobb oldala, (4a) ismételt felhasználásával:
+\begin{align}
+a \rightarrow (b \rightarrow (c \rightarrow d)) &= \overline{a} \lor (\overline{b} \lor (\overline{c} \lor d)) \tag{6}
+\end{align}
+A feni kifejezések a $\lor$ (diszjunkció) és $\overline{x}$ (nem $x$) műveleteket használják.
+\section{Binomiális tétel}
+\begin{align}
+(a + b)^{n+1} &= (a+b) \cdot \left( \sum_{k=0}^n \binom{n}{k} a^{n-k}b^k \right) \\
+&= \sum_{k=0}^n \binom{n}{k} a^{(n+1)-k}b^k \\
+&\quad+ \sum_{k=1}^{n+1} \binom{n}{k-1} a^{(n+1)-k}b^{k} \\
+&= \binom{n+1}{0} a^{n+1-0} b^0 \\
+&\quad+ \sum_{k=1}^n \binom{n+1}{k} a^{(n+1)-k}b^k \\
+&\quad+ \binom{n+1}{n+1} a^{n+1-(n+1)} b^{n+1} \\
+&= \sum_{k=0}^{n+1} \binom{n+1}{k} a^{(n+1)-k}b^k
+\end{align}
+\end{document}
